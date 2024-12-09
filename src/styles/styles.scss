@@ -1,26 +1,68 @@
-@import 'icomoon/style.css';
-@import 'custom-swiper.scss';
-@import 'loading.scss';
-@import 'globals.scss';
-@import 'modal.scss';
-@import 'header.scss';
-@import 'footer.scss';
-@import 'product.scss';
-@import 'blog.scss';
-@import 'shop.scss';
-@import 'faqs.scss';
-@import 'cart.scss';
-@import 'compare.scss';
-@import 'layout/category-active.scss';
-@import 'layout/text-has-line-before.scss';
-@import 'layout/collection.scss';
-@import 'layout/tab-features.scss';
-@import 'layout/banner.scss';
-@import 'layout/testimonial.scss';
-@import 'layout/instagram.scss';
-@import 'layout/benefit.scss';
-@import 'layout/newsletter.scss';
-@import 'layout/featured-product.scss';
+@import "icomoon/style.css";
+@import "custom-swiper.scss";
+@import "loading.scss";
+@import "globals.scss";
+@import "modal.scss";
+@import "header.scss";
+@import "footer.scss";
+@import "product.scss";
+@import "blog.scss";
+@import "shop.scss";
+@import "faqs.scss";
+@import "cart.scss";
+@import "compare.scss";
+@import "layout/category-active.scss";
+@import "layout/text-has-line-before.scss";
+@import "layout/collection.scss";
+@import "layout/tab-features.scss";
+@import "layout/banner.scss";
+@import "layout/testimonial.scss";
+@import "layout/instagram.scss";
+@import "layout/benefit.scss";
+@import "layout/newsletter.scss";
+@import "layout/featured-product.scss";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+body::-webkit-scrollbar {
+    width: 6px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #737373;
+    border-radius: 20px;
+}
+
+.scrollbar-style::-webkit-scrollbar-track {
+    border: 1px solid #d3d2d8;
+    border-radius: 20px;
+    background-color: transparent;
+    margin-bottom: 10px;
+}
+
+.scrollbar-style::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    background-color: transparent;
+}
+
+.scrollbar-style::-webkit-scrollbar-thumb {
+    background-color: #737373;
+    border-radius: 20px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
