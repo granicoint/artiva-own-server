@@ -2,7 +2,8 @@ import axios from "axios";
 import { interceptorsRequest, interceptorsRequestError, interceptorsResponse, interceptorsResponseError } from "./interceptors.js";
 
 let API = axios.create({
-    baseURL: `http://localhost:5055/api`,
+    // baseURL: `http://localhost:5055/api`,
+    baseURL: `https://artiva-backend.vercel.app/api`,
     responseType: "json",
 });
 
