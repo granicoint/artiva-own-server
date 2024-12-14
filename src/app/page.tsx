@@ -26,7 +26,7 @@ export default function Home() {
                 <SliderOne />
             </div>
             <WhatNewOne data={productData} start={0} limit={4} />
-            <Collection />
+            <Collection onTypeClick={undefined} />
             <TabFeatures data={productData} start={8} limit={16} />
             {/* <Banner /> */}
             <Lookbook />
