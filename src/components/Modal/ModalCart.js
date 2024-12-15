@@ -40,8 +40,8 @@ const ModalCart = ({ serverTimeLeft }) => {
     };
 
     let moneyForFreeship = 150;
-    let [totalCart, setTotalCart] = useState < number > 0;
-    let [discountCart, setDiscountCart] = useState < number > 0;
+    let [totalCart, setTotalCart] = useState(0);
+    let [discountCart, setDiscountCart] = useState(0);
 
     cartState.cartArray.map((item) => (totalCart += item.price * item.quantity));
 

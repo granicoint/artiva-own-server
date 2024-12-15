@@ -1,29 +1,31 @@
-'use client'
-import React, { useState } from 'react'
-import Link from 'next/link'
+"use client";
+import React, { useState } from "react";
+import Link from "next/link";
 import * as Icon from "@phosphor-icons/react/dist/ssr";
-import { useCart } from '@/context/CartContext'
-import { useModalCartContext } from '@/context/ModalCartContext'
+import { useCart } from "@/context/CartContext";
+import { useModalCartContext } from "@/context/ModalCartContext";
 
 const Checkout = () => {
-    const { openModalCart } = useModalCartContext()
+    const { openModalCart } = useModalCartContext();
     const { cartState } = useCart();
-    let [totalCart, setTotalCart] = useState<number>(0)
+    let [totalCart, setTotalCart] = useState<number>(0);
 
-    cartState.cartArray.map(item => totalCart += item.price * item.quantity)
+    cartState.cartArray.map((item) => (totalCart += item.price * item.quantity));
 
     return (
         <>
-            <div id="header" className='relative w-full'>
+            <div id="header" className="relative w-full">
                 <div className={`header-menu style-one fixed top-0 left-0 right-0 w-full md:h-[74px] h-[56px]`}>
                     <div className="container mx-auto h-full">
                         <div className="header-main flex items-center justify-between h-full">
-                            <Link href={'/'} className='flex items-center'>
+                            <Link href={"/"} className="flex items-center">
                                 <div className="heading4">Anvogue</div>
                             </Link>
                             <button className="max-md:hidden cart-icon flex items-center relative h-fit cursor-pointer" onClick={openModalCart}>
-                                <Icon.Handbag size={24} color='black' />
-                                <span className="quantity cart-quantity absolute -right-1.5 -top-1.5 text-xs text-white bg-black w-4 h-4 flex items-center justify-center rounded-full">{cartState.cartArray.length}</span>
+                                <Icon.Handbag size={24} color="black" />
+                                <span className="quantity cart-quantity absolute -right-1.5 -top-1.5 text-xs text-white bg-black w-4 h-4 flex items-center justify-center rounded-full">
+                                    {cartState.cartArray.length}
+                                </span>
                             </button>
                         </div>
                     </div>
@@ -36,16 +38,20 @@ const Checkout = () => {
                             <form>
                                 <div className="login flex justify-between gap-4">
                                     <h4 className="heading4">Contact</h4>
-                                    <Link href={"/login"} className="text-button underline">Login here</Link>
+                                    <Link href={"/login"} className="text-button underline">
+                                        Login here
+                                    </Link>
                                 </div>
                                 <div>
                                     <input type="text" className="border-line mt-5 px-4 py-3 w-full rounded-lg" placeholder="Email or mobile phone number" required />
                                     <div className="flex items-center mt-5">
                                         <div className="block-input">
                                             <input type="checkbox" name="remember" id="remember" />
-                                            <Icon.CheckSquare weight='fill' className="icon-checkbox text-2xl" />
+                                            <Icon.CheckSquare weight="fill" className="icon-checkbox text-2xl" />
                                         </div>
-                                        <label htmlFor="remember" className="pl-2 cursor-pointer">Email me with news and offers</label>
+                                        <label htmlFor="remember" className="pl-2 cursor-pointer">
+                                            Email me with news and offers
+                                        </label>
                                     </div>
                                 </div>
                                 <div className="information md:mt-10 mt-6">
@@ -53,12 +59,16 @@ const Checkout = () => {
                                     <div className="deli_type mt-5">
                                         <div className="item flex items-center gap-2 relative px-5 border border-line rounded-t-lg">
                                             <input type="radio" name="deli_type" id="ship_type" className="cursor-pointer" defaultChecked />
-                                            <label htmlFor="ship_type" className="w-full py-4 cursor-pointer">Ship</label>
+                                            <label htmlFor="ship_type" className="w-full py-4 cursor-pointer">
+                                                Ship
+                                            </label>
                                             <Icon.Truck className="text-xl absolute top-1/2 right-5 -translate-y-1/2" />
                                         </div>
                                         <div className="item flex items-center gap-2 relative px-5 border border-line rounded-b-lg">
                                             <input type="radio" name="deli_type" id="store_type" className="cursor-pointer" />
-                                            <label htmlFor="store_type" className="w-full py-4 cursor-pointer">Pickup in store</label>
+                                            <label htmlFor="store_type" className="w-full py-4 cursor-pointer">
+                                                Pickup in store
+                                            </label>
                                             <Icon.Storefront className="text-xl absolute top-1/2 right-5 -translate-y-1/2" />
                                         </div>
                                     </div>
@@ -74,7 +84,13 @@ const Checkout = () => {
                                                 <Icon.CaretDown className="arrow-down" />
                                             </div>
                                             <div className="">
-                                                <input className="border-line px-4 py-3 w-full rounded-lg" id="firstName" type="text" placeholder="First Name (optional)" required />
+                                                <input
+                                                    className="border-line px-4 py-3 w-full rounded-lg"
+                                                    id="firstName"
+                                                    type="text"
+                                                    placeholder="First Name (optional)"
+                                                    required
+                                                />
                                             </div>
                                             <div className="">
                                                 <input className="border-line px-4 py-3 w-full rounded-lg" id="lastName" type="text" placeholder="Last Name" required />
@@ -84,7 +100,13 @@ const Checkout = () => {
                                                 <Icon.MagnifyingGlass className="text-xl absolute top-1/2 -translate-y-1/2 right-5" />
                                             </div>
                                             <div className="">
-                                                <input className="border-line px-4 py-3 w-full rounded-lg" id="apartment" type="text" placeholder="Apartment, suite,etc.(optional)" required />
+                                                <input
+                                                    className="border-line px-4 py-3 w-full rounded-lg"
+                                                    id="apartment"
+                                                    type="text"
+                                                    placeholder="Apartment, suite,etc.(optional)"
+                                                    required
+                                                />
                                             </div>
                                             <div className="">
                                                 <input className="border-line px-4 py-3 w-full rounded-lg" id="city" type="text" placeholder="City" required />
@@ -103,7 +125,9 @@ const Checkout = () => {
                                             </div>
                                         </div>
                                         <h4 className="heading4 md:mt-10 mt-6">Shipping method</h4>
-                                        <div className="body1 text-secondary2 py-6 px-5 border border-line rounded-lg bg-surface mt-5">Enter your shipping address to view available shipping methods</div>
+                                        <div className="body1 text-secondary2 py-6 px-5 border border-line rounded-lg bg-surface mt-5">
+                                            Enter your shipping address to view available shipping methods
+                                        </div>
                                         <div className="payment-block md:mt-10 mt-6">
                                             <h4 className="heading4">Payment</h4>
                                             <p className="body1 text-secondary2 mt-3">All transactions are secure and encrypted.</p>
@@ -115,25 +139,51 @@ const Checkout = () => {
                                                     </div>
                                                     <div className="form_payment grid grid-cols-2 gap-4 gap-y-5 p-5 rounded-b-lg bg-surface">
                                                         <div className="col-span-full relative">
-                                                            <input className="border-line pl-4 pr-12 py-3 w-full rounded-lg" id="cardNumbers" type="text" placeholder="Card Numbers" required />
+                                                            <input
+                                                                className="border-line pl-4 pr-12 py-3 w-full rounded-lg"
+                                                                id="cardNumbers"
+                                                                type="text"
+                                                                placeholder="Card Numbers"
+                                                                required
+                                                            />
                                                             <Icon.LockSimple className="text-xl text-secondary absolute top-1/2 -translate-y-1/2 right-5" />
                                                         </div>
                                                         <div className="relative">
-                                                            <input className="border-line px-4 py-3 w-full rounded-lg" id="expirationDate" type="text" placeholder="Expiration date (MM /YY)" required />
+                                                            <input
+                                                                className="border-line px-4 py-3 w-full rounded-lg"
+                                                                id="expirationDate"
+                                                                type="text"
+                                                                placeholder="Expiration date (MM /YY)"
+                                                                required
+                                                            />
                                                         </div>
                                                         <div className="relative">
-                                                            <input className="border-line pl-4 pr-12 py-3 w-full rounded-lg" id="securityCode" type="text" placeholder="Security code" required />
+                                                            <input
+                                                                className="border-line pl-4 pr-12 py-3 w-full rounded-lg"
+                                                                id="securityCode"
+                                                                type="text"
+                                                                placeholder="Security code"
+                                                                required
+                                                            />
                                                             <Icon.Question className="text-xl text-secondary absolute top-1/2 -translate-y-1/2 right-5" />
                                                         </div>
                                                         <div className="col-span-full relative">
-                                                            <input className="border-line px-4 py-3 w-full rounded-lg" id="cardName" type="text" placeholder="Name On Card" required />
+                                                            <input
+                                                                className="border-line px-4 py-3 w-full rounded-lg"
+                                                                id="cardName"
+                                                                type="text"
+                                                                placeholder="Name On Card"
+                                                                required
+                                                            />
                                                         </div>
                                                         <div className="col-span-full flex items-center">
                                                             <div className="block-input">
                                                                 <input type="checkbox" name="useAddress" id="useAddress" />
-                                                                <Icon.CheckSquare weight='fill' className="icon-checkbox text-2xl" />
+                                                                <Icon.CheckSquare weight="fill" className="icon-checkbox text-2xl" />
                                                             </div>
-                                                            <label htmlFor="useAddress" className="text-title pl-2 cursor-pointer">Use shipping address as billing address</label>
+                                                            <label htmlFor="useAddress" className="text-title pl-2 cursor-pointer">
+                                                                Use shipping address as billing address
+                                                            </label>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -161,7 +211,9 @@ const Checkout = () => {
                                             <strong className="name text-title">Contrasting sheepskin sweatshirt</strong>
                                             <div className="flex items-center gap-2 mt-2">
                                                 <Icon.Tag className="text-secondary" />
-                                                <span className="code text-secondary">AN6810 <span className="discount">(-$14.20)</span></span>
+                                                <span className="code text-secondary">
+                                                    AN6810 <span className="discount">(-$14.20)</span>
+                                                </span>
                                             </div>
                                         </div>
                                     </div>
@@ -180,7 +232,9 @@ const Checkout = () => {
                                             <strong className="name text-title">Contrasting sheepskin sweatshirt</strong>
                                             <div className="flex items-center gap-2 mt-2">
                                                 <Icon.Tag className="text-secondary" />
-                                                <span className="code text-secondary">AN6810 <span className="discount">(-$14.20)</span></span>
+                                                <span className="code text-secondary">
+                                                    AN6810 <span className="discount">(-$14.20)</span>
+                                                </span>
                                             </div>
                                         </div>
                                     </div>
@@ -210,7 +264,7 @@ const Checkout = () => {
                                 </div>
                             </div>
                             <div className="total-saving-block flex items-center gap-2 mt-4">
-                                <Icon.Tag weight='bold' className="text-xl" />
+                                <Icon.Tag weight="bold" className="text-xl" />
                                 <strong className="heading5">TOTAL SAVINGS</strong>
                                 <strong className="heading5">$14.85</strong>
                             </div>
@@ -219,7 +273,7 @@ const Checkout = () => {
                 </div>
             </div>
         </>
-    )
-}
+    );
+};
 
-export default Checkout
+export default Checkout;
