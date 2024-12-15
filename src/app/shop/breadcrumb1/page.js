@@ -10,7 +10,7 @@ import Footer from "@/components/Footer/Footer";
 
 export default function BreadCrumb1() {
     const searchParams = useSearchParams();
-    let [type, setType] = useState<string | null | undefined>();
+    let [type, setType] = useState();
     let datatype = searchParams.get("type");
     let gender = searchParams.get("gender");
     let category = searchParams.get("category");
