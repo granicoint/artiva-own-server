@@ -8,11 +8,11 @@ import { useModalQuickviewContext } from "@/context/ModalQuickviewContext";
 import Image from "next/image";
 
 const ModalNewsletter = () => {
-    const [open, setOpen] = useState<boolean>(false);
+    const [open, setOpen] = useState(false);
     const router = useRouter();
     const { openQuickview } = useModalQuickviewContext();
 
-    const handleDetailProduct = (productId: string) => {
+    const handleDetailProduct = (productId) => {
         // redirect to shop with category selected
         router.push(`/product/default?id=${productId}`);
     };
