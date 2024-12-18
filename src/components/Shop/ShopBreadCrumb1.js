@@ -3,13 +3,14 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import * as Icon from "@phosphor-icons/react/dist/ssr";
-import { ProductType } from "@/type/ProductType";
 import Product from "../Product/Product";
 import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
 import HandlePagination from "../Other/HandlePagination";
+import API from "@/apiService/Api";
+import { transformProducts } from "../Home1/WhatNewOne";
 
-const ShopBreadCrumb1 = ({ data, productPerPage, dataType, gender, category }) => {
+const ShopBreadCrumb1 = ({ productPerPage, dataType, gender, category }) => {
     const [showOnlySale, setShowOnlySale] = useState(false);
     const [sortOption, setSortOption] = useState("");
     const [type, setType] = useState(dataType);
@@ -20,6 +21,61 @@ const ShopBreadCrumb1 = ({ data, productPerPage, dataType, gender, category }) =
     const [currentPage, setCurrentPage] = useState(0);
     const productsPerPage = productPerPage;
     const offset = currentPage * productsPerPage;
+
+    const fetchProducts = async (page = 1, limit = 1000, category = "", title = "", price = "") => {
+        try {
+            const url = `/products?page=${page}&limit=${limit}&category=${category}&title=${title}&price=${price}`;
+
+            const response = await API.get(`${url}`);
+
+            const transformedProducts = transformProducts(response.data.products);
+
+            return transformedProducts;
+        } catch (error) {
+            console.log("Error fetching products:", error);
+            throw error;
+        }
+    };
+
+    const [data, setData] = useState([]);
+
+    const fetchData = async () => {
+        const category = exploreCollection.find((el) => el.name === type)?.id;
+
+        try {
+            const products = await fetchProducts(1, 20, category);
+
+            setData(products);
+        } catch (error) {
+            console.error("Error fetching products:", error);
+        }
+    };
+
+    const [exploreCollection, setExploreCollection] = useState([]);
+
+    const fetchCategory = async () => {
+        try {
+            const res = await API.get("category/all");
+
+            const category = res.data.filter((el) => !!el.isExploreCollection)?.map((el) => ({ ...el, name: el.name.en, image: el.icon, alt: el.name.en, id: el._id }));
+
+            console.log(`category : `, category);
+
+            setExploreCollection(category);
+        } catch (error) {
+            console.log(`error : `, error);
+        }
+    };
+
+    useEffect(() => {
+        fetchCategory();
+    }, []);
+
+    useEffect(() => {
+        if (exploreCollection.length) {
+            fetchData();
+        }
+    }, [type, exploreCollection]);
 
     const handleShowOnlySale = () => {
         setShowOnlySale((toggleSelect) => !toggleSelect);
@@ -59,6 +115,7 @@ const ShopBreadCrumb1 = ({ data, productPerPage, dataType, gender, category }) =
 
     // Filter product
     let filteredData = data.filter((product) => {
+        return true;
         let isShowOnlySaleMatched = true;
         if (showOnlySale) {
             isShowOnlySaleMatched = product.sale;
@@ -220,15 +277,17 @@ const ShopBreadCrumb1 = ({ data, productPerPage, dataType, gender, category }) =
                                 </div>
                             </div>
                             <div className="list-tab flex flex-wrap items-center justify-center gap-y-5 gap-8 lg:mt-[70px] mt-12 overflow-hidden">
-                                {["t-shirt", "dress", "top", "swimwear", "shirt"].map((item, index) => (
-                                    <div
-                                        key={index}
-                                        className={`tab-item text-button-uppercase cursor-pointer has-line-before line-2px ${dataType === item ? "active" : ""}`}
-                                        onClick={() => handleType(item)}
-                                    >
-                                        {item}
-                                    </div>
-                                ))}
+                                {exploreCollection?.map((item, index) => {
+                                    return (
+                                        <div
+                                            key={index}
+                                            className={`tab-item text-button-uppercase cursor-pointer has-line-before line-2px ${type === item.name ? "active" : ""}`}
+                                            onClick={() => handleType(item.name)}
+                                        >
+                                            {item.name}
+                                        </div>
+                                    );
+                                })}
                             </div>
                         </div>
                     </div>
