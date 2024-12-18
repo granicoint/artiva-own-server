@@ -211,7 +211,7 @@ const Product = ({ data, type }) => {
                                             }}
                                         >
                                             <div className="list-size flex items-center justify-center flex-wrap gap-2">
-                                                {data.sizes.map((item, index) => (
+                                                {/* {data.sizes.map((item, index) => (
                                                     <div
                                                         className={`size-item w-10 h-10 rounded-full flex items-center justify-center text-button bg-white border border-line ${
                                                             activeSize === item ? "active" : ""
@@ -221,7 +221,7 @@ const Product = ({ data, type }) => {
                                                     >
                                                         {item}
                                                     </div>
-                                                ))}
+                                                ))} */}
                                             </div>
                                             <div
                                                 className="button-main w-full text-center rounded-full py-3 mt-4"

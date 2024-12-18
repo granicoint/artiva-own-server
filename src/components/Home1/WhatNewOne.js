@@ -20,7 +20,6 @@ export function transformProducts(products) {
         sold: 0,
         quantity: product.stock || 0,
         quantityPurchase: 1,
-        sizes: product.specification?.map((spec) => spec.value) || [],
         variation: product.variants,
         thumbImage: product.image || [],
         images: product.image || [],
@@ -31,6 +30,7 @@ export function transformProducts(products) {
         status: product.status || "",
         tag: product?.saleTag,
         specification: product.specification,
+        sku: product.sku,
     }));
 }
 
