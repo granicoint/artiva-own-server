@@ -90,7 +90,9 @@ const Product = ({ data, type }) => {
                     <div onClick={() => handleDetailProduct(data)} className="product-main cursor-pointer block">
                         <div className="product-thumb bg-white relative overflow-hidden rounded-2xl">
                             {data.tag && (
-                                <div className="product-tag text-button-uppercase bg-green px-3 py-0.5 inline-block rounded-full absolute top-3 left-3 z-[1]">{data.tag}</div>
+                                <div className="product-tag text-button-uppercase bg-green px-3 py-0.5 inline-block rounded-full absolute top-3 left-3 z-[1]">
+                                    {data.tag}
+                                </div>
                             )}
                             <div className="list-action-right absolute top-3 right-3 max-lg:hidden">
                                 <div
@@ -127,7 +129,7 @@ const Product = ({ data, type }) => {
                                     <Icon.CheckCircle size={20} className="checked-icon" />
                                 </div>
                             </div>
-                            <div className="product-img w-full h-full aspect-[3/4]">
+                            <div className="product-img w-full h-full aspect-square">
                                 {activeColor ? (
                                     <>
                                         {
@@ -137,7 +139,7 @@ const Product = ({ data, type }) => {
                                                 height={500}
                                                 alt={data.name}
                                                 priority={true}
-                                                className="w-full h-full object-cover duration-700"
+                                                className="w-full h-full duration-700"
                                             />
                                         }
                                     </>
@@ -151,7 +153,7 @@ const Product = ({ data, type }) => {
                                                 height={500}
                                                 priority={true}
                                                 alt={data.name}
-                                                className="w-full h-full object-cover duration-700"
+                                                className="w-full h-full duration-700"
                                             />
                                         ))}
                                     </>
@@ -304,7 +306,14 @@ const Product = ({ data, type }) => {
                                                 handleActiveColor(item.color);
                                             }}
                                         >
-                                            <Image src={item.colorImage} width={100} height={100} alt="color" priority={true} className="rounded-xl w-full h-full object-cover" />
+                                            <Image
+                                                src={item.colorImage}
+                                                width={100}
+                                                height={100}
+                                                alt="color"
+                                                priority={true}
+                                                className="rounded-xl w-full h-full object-cover"
+                                            />
                                             <div className="tag-action bg-black text-white caption2 capitalize px-1.5 py-0.5 rounded-sm">{item.color}</div>
                                         </div>
                                     ))}
@@ -331,9 +340,14 @@ const Product = ({ data, type }) => {
                         <>
                             <div className="product-item list-type">
                                 <div className="product-main cursor-pointer flex lg:items-center sm:justify-between gap-7 max-lg:gap-5">
-                                    <div onClick={() => handleDetailProduct(data.id)} className="product-thumb bg-white relative overflow-hidden rounded-2xl block max-sm:w-1/2">
+                                    <div
+                                        onClick={() => handleDetailProduct(data.id)}
+                                        className="product-thumb bg-white relative overflow-hidden rounded-2xl block max-sm:w-1/2"
+                                    >
                                         {data.new && (
-                                            <div className="product-tag text-button-uppercase bg-green px-3 py-0.5 inline-block rounded-full absolute top-3 left-3 z-[1]">New</div>
+                                            <div className="product-tag text-button-uppercase bg-green px-3 py-0.5 inline-block rounded-full absolute top-3 left-3 z-[1]">
+                                                New
+                                            </div>
                                         )}
                                         {data.sale && (
                                             <div className="product-tag text-button-uppercase text-white bg-red px-3 py-0.5 inline-block rounded-full absolute top-3 left-3 z-[1]">
@@ -398,7 +412,9 @@ const Product = ({ data, type }) => {
                                                     <del>₹{data.originPrice}.00</del>
                                                 </div>
                                                 {data.originPrice && (
-                                                    <div className="product-sale caption1 font-medium bg-green px-3 py-0.5 inline-block rounded-full">-{percentSale}%</div>
+                                                    <div className="product-sale caption1 font-medium bg-green px-3 py-0.5 inline-block rounded-full">
+                                                        -{percentSale}%
+                                                    </div>
                                                 )}
                                             </div>
                                             {data.variation.length > 0 && data.action === "add to cart" ? (
@@ -409,7 +425,9 @@ const Product = ({ data, type }) => {
                                                             className={`color-item w-8 h-8 rounded-full duration-300 relative`}
                                                             style={{ backgroundColor: `${item.colorCode}` }}
                                                         >
-                                                            <div className="tag-action bg-black text-white caption2 capitalize px-1.5 py-0.5 rounded-sm">{item.color}</div>
+                                                            <div className="tag-action bg-black text-white caption2 capitalize px-1.5 py-0.5 rounded-sm">
+                                                                {item.color}
+                                                            </div>
                                                         </div>
                                                     ))}
                                                 </div>
@@ -429,7 +447,14 @@ const Product = ({ data, type }) => {
                                                                             handleActiveColor(item.color);
                                                                         }}
                                                                     >
-                                                                        <Image src={item.colorImage} width={100} height={100} alt="color" priority={true} className="rounded-xl" />
+                                                                        <Image
+                                                                            src={item.colorImage}
+                                                                            width={100}
+                                                                            height={100}
+                                                                            alt="color"
+                                                                            priority={true}
+                                                                            className="rounded-xl"
+                                                                        />
                                                                         <div className="tag-action bg-black text-white caption2 capitalize px-1.5 py-0.5 rounded-sm">
                                                                             {item.color}
                                                                         </div>

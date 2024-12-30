@@ -135,7 +135,13 @@ const Default = ({ data, productId }) => {
                 <div className="featured-product underwear md:py-20 py-10">
                     <div className="container flex justify-between gap-y-6 flex-wrap">
                         <div className="list-img md:w-1/2 md:pr-[45px] w-full">
-                            <Swiper slidesPerView={1} spaceBetween={0} thumbs={{ swiper: thumbsSwiper }} modules={[Thumbs]} className="mySwiper2 rounded-2xl overflow-hidden">
+                            <Swiper
+                                slidesPerView={1}
+                                spaceBetween={0}
+                                thumbs={{ swiper: thumbsSwiper }}
+                                modules={[Thumbs]}
+                                className="mySwiper2 rounded-2xl overflow-hidden"
+                            >
                                 {productMain?.images?.map((item, index) => (
                                     <SwiperSlide
                                         key={index}
@@ -144,7 +150,7 @@ const Default = ({ data, productId }) => {
                                             setOpenPopupImg(true);
                                         }}
                                     >
-                                        <Image src={item} width={1000} height={1000} alt="prd-img" className="w-full aspect-[3/4] object-cover" />
+                                        <Image src={item} width={1000} height={1000} alt="prd-img" className="w-full aspect-square" />
                                     </SwiperSlide>
                                 ))}
                             </Swiper>
@@ -159,7 +165,7 @@ const Default = ({ data, productId }) => {
                             >
                                 {productMain?.images?.map((item, index) => (
                                     <SwiperSlide key={index}>
-                                        <Image src={item} width={1000} height={1300} alt="prd-img" className="w-full aspect-[3/4] object-cover rounded-xl" />
+                                        <Image src={item} width={1000} height={1300} alt="prd-img" className="w-full aspect-square rounded-xl" />
                                     </SwiperSlide>
                                 ))}
                             </Swiper>
@@ -368,7 +374,9 @@ const Default = ({ data, productId }) => {
 
                                 <div className="list-payment mt-7">
                                     <div className="main-content lg:pt-8 pt-6 lg:pb-6 pb-4 sm:px-4 px-3 border border-line rounded-xl relative max-md:w-2/3 max-sm:w-full">
-                                        <div className="heading6 px-5 bg-white absolute -top-[14px] left-1/2 -translate-x-1/2 whitespace-nowrap">Guranteed safe checkout</div>
+                                        <div className="heading6 px-5 bg-white absolute -top-[14px] left-1/2 -translate-x-1/2 whitespace-nowrap">
+                                            Guranteed safe checkout
+                                        </div>
                                         <div className="list grid grid-cols-6">
                                             <div className="item flex items-center justify-center lg:px-3 px-1">
                                                 <Image src={"/images/payment/Frame-0.png"} width={500} height={450} alt="payment" className="w-full" />
@@ -450,13 +458,17 @@ const Default = ({ data, productId }) => {
                         <div className="flex items-center justify-center w-full">
                             <div className="menu-tab flex items-center md:gap-[60px] gap-8">
                                 <div
-                                    className={`tab-item heading5 has-line-before text-secondary2 hover:text-black duration-300 ${activeTab === "description" ? "active" : ""}`}
+                                    className={`tab-item heading5 has-line-before text-secondary2 hover:text-black duration-300 ${
+                                        activeTab === "description" ? "active" : ""
+                                    }`}
                                     onClick={() => handleActiveTab("description")}
                                 >
                                     Description
                                 </div>
                                 <div
-                                    className={`tab-item heading5 has-line-before text-secondary2 hover:text-black duration-300 ${activeTab === "specifications" ? "active" : ""}`}
+                                    className={`tab-item heading5 has-line-before text-secondary2 hover:text-black duration-300 ${
+                                        activeTab === "specifications" ? "active" : ""
+                                    }`}
                                     onClick={() => handleActiveTab("specifications")}
                                 >
                                     Specifications
