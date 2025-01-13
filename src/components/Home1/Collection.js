@@ -42,6 +42,7 @@ const Collection = ({ title = "Explore Collections", onTypeClick, className = ""
             </div>
             <div className="list-collection section-swiper-navigation md:mt-10 mt-6 sm:px-5 px-4">
                 <Swiper
+                    key={exploreCollection.length}
                     spaceBetween={12}
                     slidesPerView={2}
                     navigation

@@ -31,6 +31,7 @@ export function transformProducts(products) {
         tag: product?.saleTag,
         specification: product.specification,
         sku: product.sku,
+        categories: product.categories,
     }));
 }
 
@@ -45,13 +46,15 @@ const WhatNewOne = ({ data, start, limit }) => {
         setActiveTab(type);
     };
 
-    const filteredProducts = product?.filter((product) => product.type === activeTab);
+    const filteredProducts = product?.filter((product) => product.categories.some((el) => el._id === activeTab));
 
     const fetchProducts = async (page = 1, limit = 1000, category = "", title = "", price = "") => {
         try {
             const url = `/products?page=${page}&limit=${limit}&category=${category}&title=${title}&price=${price}`;
 
             const response = await API.get(`${url}`);
+
+            console.log("response.data.products =:= ", response.data.products);
 
             const transformedProducts = transformProducts(response.data.products);
 

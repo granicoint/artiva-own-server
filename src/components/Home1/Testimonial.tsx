@@ -1,11 +1,11 @@
-'use client'
+"use client";
 
-import React from 'react'
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Pagination } from 'swiper/modules';
-import 'swiper/css/bundle';
-import TestimonialItem from '../Testimonial/TestimonialItem';
-import { TestimonialType } from '@/type/TestimonialType'
+import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination } from "swiper/modules";
+import "swiper/css/bundle";
+import TestimonialItem from "../Testimonial/TestimonialItem";
+import { TestimonialType } from "@/type/TestimonialType";
 
 interface Props {
     data: Array<TestimonialType>;
@@ -15,11 +15,9 @@ interface Props {
 const Testimonial: React.FC<Props> = ({ data, limit }) => {
     return (
         <>
-            <div className="testimonial-block md:py-20 py-10 bg-surface">
+            <div className="testimonial-block md:py-20 py-10 bg-linear">
                 <div className="container">
-                    <div className="heading3 text-center">
-                        What People Are Saying
-                    </div>
+                    <div className="heading3 text-center">What People Are Saying</div>
 
                     <div className="list-testimonial pagination-mt40 md:mt-10 mt-6">
                         <Swiper
@@ -41,7 +39,7 @@ const Testimonial: React.FC<Props> = ({ data, limit }) => {
                         >
                             {data.slice(0, limit).map((prd, index) => (
                                 <SwiperSlide key={index}>
-                                    <TestimonialItem data={prd} type='style-one' />
+                                    <TestimonialItem data={prd} type="style-one" />
                                 </SwiperSlide>
                             ))}
                         </Swiper>
@@ -49,7 +47,7 @@ const Testimonial: React.FC<Props> = ({ data, limit }) => {
                 </div>
             </div>
         </>
-    )
-}
+    );
+};
 
-export default Testimonial
+export default Testimonial;

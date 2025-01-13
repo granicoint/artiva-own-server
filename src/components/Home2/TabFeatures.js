@@ -11,8 +11,6 @@ const TabFeatures = ({ data, start, limit }) => {
 
     const [product, setProduct] = useState({});
 
-    console.log(`product : `, product);
-
     const fetchCategory = async () => {
         try {
             const category = await API.get("products/featured");

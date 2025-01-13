@@ -139,6 +139,7 @@ const Product = ({ data, type }) => {
                                                 height={500}
                                                 alt={data.name}
                                                 priority={true}
+                                                style={{ opacity: 1, transform: "scale(1)" }}
                                                 className="w-full h-full duration-700"
                                             />
                                         }
@@ -153,6 +154,7 @@ const Product = ({ data, type }) => {
                                                 height={500}
                                                 priority={true}
                                                 alt={data.name}
+                                                style={{ opacity: 1, transform: "scale(1)" }}
                                                 className="w-full h-full duration-700"
                                             />
                                         ))}

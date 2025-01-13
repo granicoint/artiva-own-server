@@ -25,15 +25,15 @@ export default function Home() {
                 <MenuOne props="bg-transparent" />
                 <SliderOne />
             </div>
-            <WhatNewOne data={productData} start={0} limit={4} />
+            <WhatNewOne data={productData} start={0} limit={16} />
             <Collection onTypeClick={undefined} />
-            <TabFeatures data={productData} start={8} limit={16} />
+            <TabFeatures data={productData} start={0} limit={8} />
             {/* <Banner /> */}
             <Lookbook />
             <Benefit props="md:py-20 py-10" />
             <Testimonial data={testimonialData} limit={6} />
-            <Instagram />
-            <Brand />
+            {/* <Instagram /> */}
+            {/* <Brand /> */}
             <Footer />
             <ModalNewsletter />
         </>
