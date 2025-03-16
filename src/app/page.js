@@ -17,6 +17,11 @@ import Footer from "@/components/Footer/Footer";
 import ModalNewsletter from "@/components/Modal/ModalNewsletter";
 import Lookbook from "@/components/Jewelry/Lookbook";
 
+export const metadata = {
+    title: "Artiva India | Home Improvement",
+    description: "Find the best bathroom renovation and decor products with Artiva. High-quality, affordable solutions for your home improvement needs."
+};
+
 export default function Home() {
     return (
         <>

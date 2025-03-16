@@ -77,8 +77,10 @@ const MenuOne: React.FC<Props> = ({ props }) => {
                         </div>
                         <div className="left flex items-center gap-16">
                             <Link href={"/"} className="flex items-center max-lg:absolute max-lg:left-1/2 max-lg:-translate-x-1/2">
-                                <div className="heading4">ARTIVA</div>
+                                {/* <div className="heading4">ARTIVA</div> */}
+                                <Image src="/images/logo/artiva-logo.png" width={108} height={54} alt="Artiva" />
                             </Link>
+
                             <div className="menu-main h-full max-lg:hidden">
                                 <ul className="flex items-center gap-8 h-full">
                                     <li className="h-full relative">
@@ -214,7 +216,7 @@ const MenuOne: React.FC<Props> = ({ props }) => {
                                             </ul>
                                         </div> */}
                                     </li>
-                                    <li className="h-full">
+                                    {/* <li className="h-full">
                                         <Link href="#!" className="text-button-uppercase duration-300 h-full flex items-center justify-center">
                                             Features
                                         </Link>
@@ -500,15 +502,15 @@ const MenuOne: React.FC<Props> = ({ props }) => {
                                                 </div>
                                             </div>
                                         </div>
-                                    </li>
+                                    </li> */}
                                     <li className="h-full">
                                         <Link
-                                            href="#!"
+                                            href="/shop/breadcrumb1"
                                             className={`text-button-uppercase duration-300 h-full flex items-center justify-center ${pathname.includes("/shop/") ? "active" : ""}`}
                                         >
                                             Shop
                                         </Link>
-                                        <div className="mega-menu absolute top-[74px] left-0 bg-white w-screen">
+                                        {/* <div className="mega-menu absolute top-[74px] left-0 bg-white w-screen">
                                             <div className="container">
                                                 <div className="flex justify-between py-8">
                                                     <div className="nav-link basis-2/3 flex justify-between pr-12">
@@ -724,9 +726,9 @@ const MenuOne: React.FC<Props> = ({ props }) => {
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> */}
                                     </li>
-                                    <li className="h-full">
+                                    {/* <li className="h-full">
                                         <Link
                                             href="#!"
                                             className={`text-button-uppercase duration-300 h-full flex items-center justify-center ${
@@ -1021,11 +1023,11 @@ const MenuOne: React.FC<Props> = ({ props }) => {
                                                 </li>
                                             </ul>
                                         </div>
-                                    </li>
+                                    </li> */}
                                 </ul>
                             </div>
                         </div>
-                        <div className="right flex gap-12">
+                        {/* <div className="right flex gap-12">
                             <div className="max-md:hidden search-icon flex items-center cursor-pointer relative">
                                 <Icon.MagnifyingGlass size={24} color="black" onClick={openModalSearch} />
                                 <div className="line absolute bg-line w-px h-6 -right-6"></div>
@@ -1062,7 +1064,7 @@ const MenuOne: React.FC<Props> = ({ props }) => {
                                     </span>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>
@@ -1079,7 +1081,8 @@ const MenuOne: React.FC<Props> = ({ props }) => {
                                     <Icon.X size={14} />
                                 </div>
                                 <Link href={"/"} className="logo text-3xl font-semibold text-center">
-                                    Anvogue
+                                    {/* Artiva */}
+                                    <Image src="/public/images/logo/artiva-logo.png" width={120} height={120} alt={"Artiva"} />
                                 </Link>
                             </div>
                             <div className="form-search relative mt-2">

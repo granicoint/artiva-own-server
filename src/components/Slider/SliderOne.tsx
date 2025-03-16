@@ -1,13 +1,12 @@
-'use client'
+"use client";
 
-import React, { Component } from 'react'
-import Image from 'next/image'
-import Link from 'next/link'
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Pagination } from 'swiper/modules';
-import 'swiper/css/bundle';
-import 'swiper/css/effect-fade';
-
+import React, { Component } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination } from "swiper/modules";
+import "swiper/css/bundle";
+import "swiper/css/effect-fade";
 
 const SliderOne = () => {
     return (
@@ -20,9 +19,9 @@ const SliderOne = () => {
                         loop={true}
                         pagination={{ clickable: true }}
                         modules={[Pagination, Autoplay]}
-                        className='h-full relative'
+                        className="h-full relative"
                         autoplay={{
-                            delay: 4000,
+                            delay: 4000
                         }}
                     >
                         <SwiperSlide>
@@ -31,16 +30,12 @@ const SliderOne = () => {
                                     <div className="text-content basis-1/2">
                                         <div className="text-sub-display">Sale! Up To 50% Off!</div>
                                         <div className="text-display md:mt-5 mt-2">Summer Sale Collections</div>
-                                        <Link href='/shop/breadcrumb-img' className="button-main md:mt-8 mt-3">Shop Now</Link>
+                                        <Link href="/shop/breadcrumb-img" className="button-main md:mt-8 mt-3">
+                                            Shop Now
+                                        </Link>
                                     </div>
                                     <div className="sub-img absolute sm:w-1/2 w-3/5 2xl:-right-[60px] -right-[16px] bottom-0">
-                                        <Image
-                                            src={'/images/slider/bg1-1.png'}
-                                            width={670}
-                                            height={936}
-                                            alt='bg1-1'
-                                            priority={true}
-                                        />
+                                        <Image src={"/images/slider/artiva-home-1.png"} width={670} height={936} alt="bg1-1" priority={true} />
                                     </div>
                                 </div>
                             </div>
@@ -51,16 +46,12 @@ const SliderOne = () => {
                                     <div className="text-content basis-1/2">
                                         <div className="text-sub-display">Sale! Up To 50% Off!</div>
                                         <div className="text-display md:mt-5 mt-2">Fashion for Every Occasion</div>
-                                        <Link href='/shop/breadcrumb-img' className="button-main md:mt-8 mt-3">Shop Now</Link>
+                                        <Link href="/shop/breadcrumb-img" className="button-main md:mt-8 mt-3">
+                                            Shop Now
+                                        </Link>
                                     </div>
                                     <div className="sub-img absolute w-1/2 2xl:-right-[60px] -right-[0] sm:-bottom-[60px] bottom-0">
-                                        <Image
-                                            src={'/images/slider/bg1-2.png'}
-                                            width={670}
-                                            height={936}
-                                            alt='bg1-2'
-                                            priority={true}
-                                        />
+                                        <Image src={"/images/slider/artiva-home-2.png"} width={670} height={936} alt="bg1-2" priority={true} />
                                     </div>
                                 </div>
                             </div>
@@ -71,16 +62,12 @@ const SliderOne = () => {
                                     <div className="text-content basis-1/2">
                                         <div className="text-sub-display">Sale! Up To 50% Off!</div>
                                         <div className="text-display md:mt-5 mt-2">Stylish Looks for Any Season</div>
-                                        <Link href='/shop/breadcrumb-img' className="button-main md:mt-8 mt-3">Shop Now</Link>
+                                        <Link href="/shop/breadcrumb-img" className="button-main md:mt-8 mt-3">
+                                            Shop Now
+                                        </Link>
                                     </div>
                                     <div className="sub-img absolute sm:w-1/2 w-2/3 2xl:-right-[60px] -right-[36px] sm:bottom-0 -bottom-[30px]">
-                                        <Image
-                                            src={'/images/slider/bg1-3.png'}
-                                            width={670}
-                                            height={936}
-                                            alt='bg1-3'
-                                            priority={true}
-                                        />
+                                        <Image src={"/images/slider/artiva-home-3.png"} width={670} height={936} alt="bg1-3" priority={true} />
                                     </div>
                                 </div>
                             </div>
@@ -89,7 +76,7 @@ const SliderOne = () => {
                 </div>
             </div>
         </>
-    )
-}
+    );
+};
 
-export default SliderOne
+export default SliderOne;
