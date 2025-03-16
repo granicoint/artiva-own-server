@@ -243,7 +243,7 @@ const MenuCosmeticOne: React.FC<Props> = ({ props }) => {
                                         <div className="container">
                                             <div className="flex justify-between py-8">
                                                 <div className="nav-link basis-2/3 grid grid-cols-4 gap-y-8">
-                                                    <div className="nav-item">
+                                                    <div className="nav-item" data-nosnippet>
                                                         <div className="text-button-uppercase pb-2">Sale & Offer</div>
                                                         <ul>
                                                             <li>
@@ -276,7 +276,7 @@ const MenuCosmeticOne: React.FC<Props> = ({ props }) => {
                                                             </li>
                                                         </ul>
                                                     </div>
-                                                    <div className="nav-item">
+                                                    <div className="nav-item" data-nosnippet>
                                                         <div className="text-button-uppercase pb-2">Makeup</div>
                                                         <ul>
                                                             <li>
@@ -306,7 +306,7 @@ const MenuCosmeticOne: React.FC<Props> = ({ props }) => {
                                                             </li>
                                                         </ul>
                                                     </div>
-                                                    <div className="nav-item">
+                                                    <div className="nav-item" data-nosnippet>
                                                         <div className="text-button-uppercase pb-2">Skincare</div>
                                                         <ul>
                                                             <li>
@@ -336,7 +336,7 @@ const MenuCosmeticOne: React.FC<Props> = ({ props }) => {
                                                             </li>
                                                         </ul>
                                                     </div>
-                                                    <div className="nav-item">
+                                                    <div className="nav-item" data-nosnippet>
                                                         <div className="text-button-uppercase pb-2">New product</div>
                                                         <ul>
                                                             <li>
@@ -404,7 +404,7 @@ const MenuCosmeticOne: React.FC<Props> = ({ props }) => {
                                         <div className="container">
                                             <div className="flex justify-between py-8">
                                                 <div className="nav-link basis-2/3 flex justify-between pr-12">
-                                                    <div className="nav-item">
+                                                    <div className="nav-item" data-nosnippet>
                                                         <div className="text-button-uppercase pb-2">Shop Features</div>
                                                         <ul>
                                                             <li>
@@ -441,7 +441,7 @@ const MenuCosmeticOne: React.FC<Props> = ({ props }) => {
                                                             </li>
                                                         </ul>
                                                     </div>
-                                                    <div className="nav-item">
+                                                    <div className="nav-item" data-nosnippet>
                                                         <div className="text-button-uppercase pb-2">Shop Features</div>
                                                         <ul>
                                                             <li>
@@ -478,7 +478,7 @@ const MenuCosmeticOne: React.FC<Props> = ({ props }) => {
                                                             </li>
                                                         </ul>
                                                     </div>
-                                                    <div className="nav-item">
+                                                    <div className="nav-item" data-nosnippet>
                                                         <div className="text-button-uppercase pb-2">Shop Layout</div>
                                                         <ul>
                                                             <li>
@@ -540,7 +540,7 @@ const MenuCosmeticOne: React.FC<Props> = ({ props }) => {
                                                             </li>
                                                         </ul>
                                                     </div>
-                                                    <div className="nav-item">
+                                                    <div className="nav-item" data-nosnippet>
                                                         <div className="text-button-uppercase pb-2">Products Pages</div>
                                                         <ul>
                                                             <li>
@@ -621,7 +621,7 @@ const MenuCosmeticOne: React.FC<Props> = ({ props }) => {
                                         <div className="container">
                                             <div className="flex justify-between py-8">
                                                 <div className="nav-link basis-2/3 flex justify-between xl:pr-14 pr-5">
-                                                    <div className="nav-item">
+                                                    <div className="nav-item" data-nosnippet>
                                                         <div className="text-button-uppercase pb-2">Products Features</div>
                                                         <ul>
                                                             <li>
@@ -682,7 +682,7 @@ const MenuCosmeticOne: React.FC<Props> = ({ props }) => {
                                                             </li>
                                                         </ul>
                                                     </div>
-                                                    <div className="nav-item">
+                                                    <div className="nav-item" data-nosnippet>
                                                         <div className="text-button-uppercase pb-2">Products Features</div>
                                                         <ul>
                                                             <li>
@@ -727,7 +727,7 @@ const MenuCosmeticOne: React.FC<Props> = ({ props }) => {
                                                             </li>
                                                         </ul>
                                                     </div>
-                                                    <div className="nav-item">
+                                                    <div className="nav-item" data-nosnippet>
                                                         <div className="text-button-uppercase pb-2">Products Layout</div>
                                                         <ul>
                                                             <li>
@@ -1168,7 +1168,7 @@ const MenuCosmeticOne: React.FC<Props> = ({ props }) => {
                                             </div>
                                             <div className="list-nav-item w-full pt-3 pb-12">
                                                 <div className="nav-link grid grid-cols-2 gap-5 gap-y-6">
-                                                    <div className="nav-item">
+                                                    <div className="nav-item" data-nosnippet>
                                                         <div className="text-button-uppercase pb-1">Sale & Offer</div>
                                                         <ul>
                                                             <li>
@@ -1201,7 +1201,7 @@ const MenuCosmeticOne: React.FC<Props> = ({ props }) => {
                                                             </li>
                                                         </ul>
                                                     </div>
-                                                    <div className="nav-item">
+                                                    <div className="nav-item" data-nosnippet>
                                                         <div className="text-button-uppercase pb-1">Makeup</div>
                                                         <ul>
                                                             <li>
@@ -1231,7 +1231,7 @@ const MenuCosmeticOne: React.FC<Props> = ({ props }) => {
                                                             </li>
                                                         </ul>
                                                     </div>
-                                                    <div className="nav-item">
+                                                    <div className="nav-item" data-nosnippet>
                                                         <div className="text-button-uppercase pb-1">Skincare</div>
                                                         <ul>
                                                             <li>
@@ -1261,7 +1261,7 @@ const MenuCosmeticOne: React.FC<Props> = ({ props }) => {
                                                             </li>
                                                         </ul>
                                                     </div>
-                                                    <div className="nav-item">
+                                                    <div className="nav-item" data-nosnippet>
                                                         <div className="text-button-uppercase pb-1">New product</div>
                                                         <ul>
                                                             <li>
@@ -1332,7 +1332,7 @@ const MenuCosmeticOne: React.FC<Props> = ({ props }) => {
                                             <div className="list-nav-item w-full pt-3 pb-12">
                                                 <div className="">
                                                     <div className="nav-link grid grid-cols-2 gap-5 gap-y-6 justify-between">
-                                                        <div className="nav-item">
+                                                        <div className="nav-item" data-nosnippet>
                                                             <div className="text-button-uppercase pb-1">Shop Features</div>
                                                             <ul>
                                                                 <li>
@@ -1369,7 +1369,7 @@ const MenuCosmeticOne: React.FC<Props> = ({ props }) => {
                                                                 </li>
                                                             </ul>
                                                         </div>
-                                                        <div className="nav-item">
+                                                        <div className="nav-item" data-nosnippet>
                                                             <div className="text-button-uppercase pb-1">Shop Features</div>
                                                             <ul>
                                                                 <li>
@@ -1406,7 +1406,7 @@ const MenuCosmeticOne: React.FC<Props> = ({ props }) => {
                                                                 </li>
                                                             </ul>
                                                         </div>
-                                                        <div className="nav-item">
+                                                        <div className="nav-item" data-nosnippet>
                                                             <div className="text-button-uppercase pb-1">Shop Layout</div>
                                                             <ul>
                                                                 <li>
@@ -1459,7 +1459,7 @@ const MenuCosmeticOne: React.FC<Props> = ({ props }) => {
                                                                 </li>
                                                             </ul>
                                                         </div>
-                                                        <div className="nav-item">
+                                                        <div className="nav-item" data-nosnippet>
                                                             <div className="text-button-uppercase pb-1">Products Pages</div>
                                                             <ul>
                                                                 <li>
@@ -1542,7 +1542,7 @@ const MenuCosmeticOne: React.FC<Props> = ({ props }) => {
                                             <div className="list-nav-item w-full pt-3 pb-12">
                                                 <div className="">
                                                     <div className="nav-link grid grid-cols-2 gap-5 gap-y-6 justify-between">
-                                                        <div className="nav-item">
+                                                        <div className="nav-item" data-nosnippet>
                                                             <div className="text-button-uppercase pb-1">Products Features</div>
                                                             <ul>
                                                                 <li>
@@ -1603,7 +1603,7 @@ const MenuCosmeticOne: React.FC<Props> = ({ props }) => {
                                                                 </li>
                                                             </ul>
                                                         </div>
-                                                        <div className="nav-item">
+                                                        <div className="nav-item" data-nosnippet>
                                                             <div className="text-button-uppercase pb-1">Products Features</div>
                                                             <ul>
                                                                 <li>
