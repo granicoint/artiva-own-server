@@ -1,71 +1,71 @@
-"use client";
+"use client"
 
-import React, { useState, useEffect } from "react";
-import Image from "next/image";
-import Link from "next/link";
-import * as Icon from "@phosphor-icons/react/dist/ssr";
-import { usePathname } from "next/navigation";
-import Product from "@/components/Product/Product";
-import productData from "@/data/Product.json";
-import useLoginPopup from "@/store/useLoginPopup";
-import useMenuMobile from "@/store/useMenuMobile";
-import { useModalCartContext } from "@/context/ModalCartContext";
-import { useModalWishlistContext } from "@/context/ModalWishlistContext";
-import { useModalSearchContext } from "@/context/ModalSearchContext";
-import { useCart } from "@/context/CartContext";
-import { useRouter } from "next/navigation";
+import React, { useState, useEffect } from "react"
+import Image from "next/image"
+import Link from "next/link"
+import * as Icon from "@phosphor-icons/react/dist/ssr"
+import { usePathname } from "next/navigation"
+import Product from "@/components/Product/Product"
+import productData from "@/data/Product.json"
+import useLoginPopup from "@/store/useLoginPopup"
+import useMenuMobile from "@/store/useMenuMobile"
+import { useModalCartContext } from "@/context/ModalCartContext"
+import { useModalWishlistContext } from "@/context/ModalWishlistContext"
+import { useModalSearchContext } from "@/context/ModalSearchContext"
+import { useCart } from "@/context/CartContext"
+import { useRouter } from "next/navigation"
 
 interface Props {
-    props: string;
+    props: string
 }
 
 const MenuOne: React.FC<Props> = ({ props }) => {
-    const router = useRouter();
-    const pathname = usePathname();
-    let [selectedType, setSelectedType] = useState<string | null>();
-    const { openLoginPopup, handleLoginPopup } = useLoginPopup();
-    const { openMenuMobile, handleMenuMobile } = useMenuMobile();
-    const [openSubNavMobile, setOpenSubNavMobile] = useState<number | null>(null);
-    const { openModalCart } = useModalCartContext();
-    const { cartState } = useCart();
-    const { openModalWishlist } = useModalWishlistContext();
-    const { openModalSearch } = useModalSearchContext();
+    const router = useRouter()
+    const pathname = usePathname()
+    let [selectedType, setSelectedType] = useState<string | null>()
+    const { openLoginPopup, handleLoginPopup } = useLoginPopup()
+    const { openMenuMobile, handleMenuMobile } = useMenuMobile()
+    const [openSubNavMobile, setOpenSubNavMobile] = useState<number | null>(null)
+    const { openModalCart } = useModalCartContext()
+    const { cartState } = useCart()
+    const { openModalWishlist } = useModalWishlistContext()
+    const { openModalSearch } = useModalSearchContext()
 
     const handleOpenSubNavMobile = (index: number) => {
-        setOpenSubNavMobile(openSubNavMobile === index ? null : index);
-    };
+        setOpenSubNavMobile(openSubNavMobile === index ? null : index)
+    }
 
-    const [fixedHeader, setFixedHeader] = useState(false);
-    const [lastScrollPosition, setLastScrollPosition] = useState(0);
+    const [fixedHeader, setFixedHeader] = useState(false)
+    const [lastScrollPosition, setLastScrollPosition] = useState(0)
 
     useEffect(() => {
         const handleScroll = () => {
-            const scrollPosition = window.scrollY;
-            setFixedHeader(scrollPosition > 0 && scrollPosition < lastScrollPosition);
-            setLastScrollPosition(scrollPosition);
-        };
+            const scrollPosition = window.scrollY
+            setFixedHeader(scrollPosition > 0 && scrollPosition < lastScrollPosition)
+            setLastScrollPosition(scrollPosition)
+        }
 
         // Gắn sự kiện cuộn khi component được mount
-        window.addEventListener("scroll", handleScroll);
+        window.addEventListener("scroll", handleScroll)
 
         // Hủy sự kiện khi component bị unmount
         return () => {
-            window.removeEventListener("scroll", handleScroll);
-        };
-    }, [lastScrollPosition]);
+            window.removeEventListener("scroll", handleScroll)
+        }
+    }, [lastScrollPosition])
 
     const handleGenderClick = (gender: string) => {
-        router.push(`/shop/breadcrumb1?gender=${gender}`);
-    };
+        router.push(`/shop/breadcrumb1?gender=${gender}`)
+    }
 
     const handleCategoryClick = (category: string) => {
-        router.push(`/shop/breadcrumb1?category=${category}`);
-    };
+        router.push(`/shop/breadcrumb1?category=${category}`)
+    }
 
     const handleTypeClick = (type: string) => {
-        setSelectedType(type);
-        router.push(`/shop/breadcrumb1?type=${type}`);
-    };
+        setSelectedType(type)
+        router.push(`/shop/breadcrumb1?type=${type}`)
+    }
 
     return (
         <>
@@ -1082,7 +1082,9 @@ const MenuOne: React.FC<Props> = ({ props }) => {
                                 </div>
                                 <Link href={"/"} className="logo text-3xl font-semibold text-center">
                                     {/* Artiva */}
-                                    <Image src="/public/images/logo/artiva-logo.png" width={120} height={120} alt={"Artiva"} />
+                                    <Image src="/images/logo/artiva-logo.png" width={108} height={54} alt="Artiva" />
+
+                                    {/* <Image src="/public/images/logo/artiva-logo.png" width={120} height={120} alt={"Artiva"} /> */}
                                 </Link>
                             </div>
                             <div className="form-search relative mt-2">
@@ -1092,13 +1094,13 @@ const MenuOne: React.FC<Props> = ({ props }) => {
                             <div className="list-nav mt-6">
                                 <ul>
                                     <li className={`${openSubNavMobile === 1 ? "open" : ""}`} onClick={() => handleOpenSubNavMobile(1)}>
-                                        <a href={"#!"} className={`text-xl font-semibold flex items-center justify-between`}>
-                                            Demo
-                                            <span className="text-right">
+                                        <Link href={"/"} className={`text-xl font-semibold flex items-center justify-between`}>
+                                            Home
+                                            {/* <span className="text-right">
                                                 <Icon.CaretRight size={20} />
-                                            </span>
-                                        </a>
-                                        <div className="sub-nav-mobile">
+                                            </span> */}
+                                        </Link>
+                                        {/* <div className="sub-nav-mobile">
                                             <div className="back-btn flex items-center gap-3" onClick={() => handleOpenSubNavMobile(1)}>
                                                 <Icon.CaretLeft />
                                                 Back
@@ -1290,16 +1292,17 @@ const MenuOne: React.FC<Props> = ({ props }) => {
                                                     </li>
                                                 </ul>
                                             </div>
-                                        </div>
+                                        </div> */}
                                     </li>
+
                                     <li className={`${openSubNavMobile === 2 ? "open" : ""}`} onClick={() => handleOpenSubNavMobile(2)}>
-                                        <a href={"#!"} className="text-xl font-semibold flex items-center justify-between mt-5">
-                                            Features
-                                            <span className="text-right">
+                                        <Link href={"/shop/breadcrumb1"} className="text-xl font-semibold flex items-center justify-between mt-5">
+                                            Shop
+                                            {/* <span className="text-right">
                                                 <Icon.CaretRight size={20} />
-                                            </span>
-                                        </a>
-                                        <div className="sub-nav-mobile">
+                                            </span> */}
+                                        </Link>
+                                        {/* <div className="sub-nav-mobile">
                                             <div className="back-btn flex items-center gap-3" onClick={() => handleOpenSubNavMobile(2)}>
                                                 <Icon.CaretLeft />
                                                 Back
@@ -1528,9 +1531,9 @@ const MenuOne: React.FC<Props> = ({ props }) => {
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> */}
                                     </li>
-                                    <li className={`${openSubNavMobile === 3 ? "open" : ""}`} onClick={() => handleOpenSubNavMobile(3)}>
+                                    {/* <li className={`${openSubNavMobile === 3 ? "open" : ""}`} onClick={() => handleOpenSubNavMobile(3)}>
                                         <a href={"#!"} className="text-xl font-semibold flex items-center justify-between mt-5">
                                             Shop
                                             <span className="text-right">
@@ -2050,7 +2053,7 @@ const MenuOne: React.FC<Props> = ({ props }) => {
                                                 </ul>
                                             </div>
                                         </div>
-                                    </li>
+                                    </li> */}
                                 </ul>
                             </div>
                         </div>
@@ -2058,7 +2061,7 @@ const MenuOne: React.FC<Props> = ({ props }) => {
                 </div>
             </div>
         </>
-    );
-};
+    )
+}
 
-export default MenuOne;
+export default MenuOne
